@@ -1,0 +1,18 @@
+{ "name": "ref-struct"
+, "description": "\"struct\" type for Node.js"
+, "keywords": [ "struct", "ref" ]
+, "version": "0.0.0"
+, "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)"
+, "repository": { "type": "git", "url": "git://github.com/TooTallNate/ref-struct.git" }
+, "main": "./lib/ref-struct.js"
+, "scripts": {
+      "test": "mocha -gc --reporter spec"
+  }
+, "dependencies": {
+      "debug": "*"
+  }
+, "devDependencies": {
+      "mocha": "*"
+  }
+, "engines": { "node": "*" }
+}
