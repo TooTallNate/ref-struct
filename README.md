@@ -47,7 +47,7 @@ var timeval = StructType({
 var tv = new timeval
 
 
-// NODE-FFI
+// this gets very powerful when combined with `node-ffi` to invoke C functions
 gettimeofday(tv.ref(), null);
 ```
 
