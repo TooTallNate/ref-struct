@@ -34,8 +34,8 @@ var ref = require('ref')
 var StructType = require('ref-struct')
 
 // define the time types
-var time_t = ref.types.int32
-var suseconds_t = ref.types.int32
+var time_t = ref.types.long
+var suseconds_t = ref.types.long
 
 // define the "timeval" struct type
 var timeval = StructType({
