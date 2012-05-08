@@ -9,7 +9,8 @@
       "test": "mocha -gc --reporter spec"
   }
 , "dependencies": {
-      "ref": "0"
+      "debug": "*"
+    , "ref": "0"
   }
 , "devDependencies": {
       "mocha": "*"
