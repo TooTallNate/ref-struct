@@ -4,12 +4,12 @@
 , "version": "0.0.0"
 , "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)"
 , "repository": { "type": "git", "url": "git://github.com/TooTallNate/ref-struct.git" }
-, "main": "./lib/ref-struct.js"
+, "main": "./lib/struct.js"
 , "scripts": {
       "test": "mocha -gc --reporter spec"
   }
 , "dependencies": {
-      "debug": "*"
+      "ref": "0"
   }
 , "devDependencies": {
       "mocha": "*"
