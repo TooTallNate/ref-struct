@@ -195,6 +195,12 @@ describe('Struct', function () {
     test11.defineProperty('d', test11_ptr_ptr)
     test(test11, 11)
 
+    var test12 = Struct({
+        'a': ref.refType(ref.types.char)
+      , 'b': ref.types.int
+    })
+    test(test12, 12)
+
   })
 
 })
