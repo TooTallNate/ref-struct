@@ -104,6 +104,7 @@ describe('Struct', function () {
             ': sizeof(): expected ' + structType.size + ' to equal ' + expectedSize)
         })
         Object.keys(structType.fields).forEach(function (name) {
+          if (name.indexOf('skip') === 0) return
           it('should have a matching offsetof() for "' + name + '"', function () {
             var expectedOffset = bindings['test' + testNumber + ' offsetof ' + name]
             var offset = structType.fields[name].offset
@@ -200,6 +201,13 @@ describe('Struct', function () {
       , 'b': ref.types.int
     })
     test(test12, 12)
+
+    var test13 = Struct({
+        'a': ref.types.char
+      , 'b': ref.types.char
+      , 'skip': ref.types.char
+    })
+    test(test13, 13)
 
   })
 

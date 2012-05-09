@@ -82,6 +82,11 @@ typedef struct _test12 {
   int b;
 } test12;
 
+typedef struct _test13 {
+  char a;
+  char b[2];
+} test13;
+
 void Initialize(Handle<Object> target) {
   HandleScope scope;
 
@@ -146,6 +151,10 @@ void Initialize(Handle<Object> target) {
   target->Set(String::NewSymbol("test12 sizeof"), Number::New(sizeof(test12)));
   target->Set(String::NewSymbol("test12 offsetof a"), Number::New(offsetof(test12, a)));
   target->Set(String::NewSymbol("test12 offsetof b"), Number::New(offsetof(test12, b)));
+
+  target->Set(String::NewSymbol("test13 sizeof"), Number::New(sizeof(test13)));
+  target->Set(String::NewSymbol("test13 offsetof a"), Number::New(offsetof(test13, a)));
+  target->Set(String::NewSymbol("test13 offsetof b"), Number::New(offsetof(test13, b)));
 
 }
 
