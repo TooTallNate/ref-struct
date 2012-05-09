@@ -38,17 +38,17 @@ describe('Struct', function () {
   })
 
   it('should work in a more complex case', function () {
-    var MegaStruct = new Struct([
-        ['byte', 'byteVal']
-      , ['int8', 'int8Val']
-      , ['int16', 'int16Val']
-      , ['uint16', 'uint16Val']
-      , ['int32', 'int32Val']
-      , ['uint32', 'uint32Val']
-      , ['float', 'floatVal']
-      , ['double', 'doubleVal']
-      , ['pointer', 'pointerVal']
-    ])
+    var MegaStruct = Struct({
+        'byteVal': ref.types.byte
+      , 'int8Val': ref.types.int8
+      , 'int16Val': ref.types.int16
+      , 'uint16Val': ref.types.uint16
+      , 'int32Val': ref.types.int32
+      , 'uint32Val': ref.types.uint32
+      , 'floatVal': ref.types.float
+      , 'doubleVal': ref.types.double
+      , 'pointer': ref.refType(ref.types.void)
+    })
     var msTestPtr = new Buffer(1)
     var ms = new MegaStruct({
         byteVal: 100
@@ -74,14 +74,14 @@ describe('Struct', function () {
 
   it('should allow Struct nesting', function () {
 
-    var ChildStruct = new Struct([
-        ['int', 'a']
-      , ['int', 'b']
-    ])
-    var ParentStruct = new Struct([
-        [ChildStruct, 'childA']
-      , [ChildStruct, 'childB']
-    ])
+    var ChildStruct = Struct({
+        'a': ref.types.int
+      , 'b': ref.types.int
+    })
+    var ParentStruct = Struct({
+        'childA': ChildStruct
+      , 'childB': ChildStruct
+    })
 
     var ps = new ParentStruct({
         childA: { a: 100, b: 200 }
