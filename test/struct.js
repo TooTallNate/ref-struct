@@ -98,10 +98,15 @@ describe('Struct', function () {
 
     function test (structType, testNumber) {
       describe('Struct test' + testNumber, function () {
-        it('should have a matching sizeof()', function () {
+        it('should have its `size` matching sizeof()', function () {
           var expectedSize = bindings['test' + testNumber + ' sizeof']
           assert.equal(expectedSize, structType.size, 'test' + testNumber +
             ': sizeof(): expected ' + structType.size + ' to equal ' + expectedSize)
+        })
+        it('should have its `alignment` matching __alignof__()', function () {
+          var expectedAlignment = bindings['test' + testNumber + ' alignof']
+          assert.equal(expectedAlignment, structType.alignment, 'test' + testNumber +
+            ': __alignof__(): expected ' + structType.alignment + ' to equal ' + expectedAlignment)
         })
         Object.keys(structType.fields).forEach(function (name) {
           if (name.indexOf('skip') === 0) return

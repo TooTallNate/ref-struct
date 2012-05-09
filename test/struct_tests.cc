@@ -98,47 +98,56 @@ void Initialize(Handle<Object> target) {
   HandleScope scope;
 
   target->Set(String::NewSymbol("test1 sizeof"), Number::New(sizeof(test1)));
+  target->Set(String::NewSymbol("test1 alignof"), Number::New(__alignof__(test1)));
   target->Set(String::NewSymbol("test1 offsetof a"), Number::New(offsetof(test1, a)));
   target->Set(String::NewSymbol("test1 offsetof b"), Number::New(offsetof(test1, b)));
   target->Set(String::NewSymbol("test1 offsetof c"), Number::New(offsetof(test1, c)));
 
   target->Set(String::NewSymbol("test2 sizeof"), Number::New(sizeof(test2)));
+  target->Set(String::NewSymbol("test2 alignof"), Number::New(__alignof__(test2)));
   target->Set(String::NewSymbol("test2 offsetof a"), Number::New(offsetof(test2, a)));
   target->Set(String::NewSymbol("test2 offsetof b"), Number::New(offsetof(test2, b)));
   target->Set(String::NewSymbol("test2 offsetof c"), Number::New(offsetof(test2, c)));
 
   target->Set(String::NewSymbol("test3 sizeof"), Number::New(sizeof(test3)));
+  target->Set(String::NewSymbol("test3 alignof"), Number::New(__alignof__(test3)));
   target->Set(String::NewSymbol("test3 offsetof a"), Number::New(offsetof(test3, a)));
   target->Set(String::NewSymbol("test3 offsetof b"), Number::New(offsetof(test3, b)));
   target->Set(String::NewSymbol("test3 offsetof c"), Number::New(offsetof(test3, c)));
 
   target->Set(String::NewSymbol("test4 sizeof"), Number::New(sizeof(test4)));
+  target->Set(String::NewSymbol("test4 alignof"), Number::New(__alignof__(test4)));
   target->Set(String::NewSymbol("test4 offsetof a"), Number::New(offsetof(test4, a)));
   target->Set(String::NewSymbol("test4 offsetof b"), Number::New(offsetof(test4, b)));
   target->Set(String::NewSymbol("test4 offsetof c"), Number::New(offsetof(test4, c)));
 
   target->Set(String::NewSymbol("test5 sizeof"), Number::New(sizeof(test5)));
+  target->Set(String::NewSymbol("test5 alignof"), Number::New(__alignof__(test5)));
   target->Set(String::NewSymbol("test5 offsetof a"), Number::New(offsetof(test5, a)));
   target->Set(String::NewSymbol("test5 offsetof b"), Number::New(offsetof(test5, b)));
   target->Set(String::NewSymbol("test5 offsetof c"), Number::New(offsetof(test5, c)));
 
   target->Set(String::NewSymbol("test6 sizeof"), Number::New(sizeof(test6)));
+  target->Set(String::NewSymbol("test6 alignof"), Number::New(__alignof__(test6)));
   target->Set(String::NewSymbol("test6 offsetof a"), Number::New(offsetof(test6, a)));
   target->Set(String::NewSymbol("test6 offsetof b"), Number::New(offsetof(test6, b)));
   target->Set(String::NewSymbol("test6 offsetof c"), Number::New(offsetof(test6, c)));
 
   target->Set(String::NewSymbol("test7 sizeof"), Number::New(sizeof(test7)));
+  target->Set(String::NewSymbol("test7 alignof"), Number::New(__alignof__(test7)));
   target->Set(String::NewSymbol("test7 offsetof a"), Number::New(offsetof(test7, a)));
   target->Set(String::NewSymbol("test7 offsetof b"), Number::New(offsetof(test7, b)));
   target->Set(String::NewSymbol("test7 offsetof c"), Number::New(offsetof(test7, c)));
 
   target->Set(String::NewSymbol("test8 sizeof"), Number::New(sizeof(test8)));
+  target->Set(String::NewSymbol("test8 alignof"), Number::New(__alignof__(test8)));
   target->Set(String::NewSymbol("test8 offsetof a"), Number::New(offsetof(test8, a)));
   target->Set(String::NewSymbol("test8 offsetof b"), Number::New(offsetof(test8, b)));
   target->Set(String::NewSymbol("test8 offsetof c"), Number::New(offsetof(test8, c)));
   target->Set(String::NewSymbol("test8 offsetof d"), Number::New(offsetof(test8, d)));
 
   target->Set(String::NewSymbol("test9 sizeof"), Number::New(sizeof(test9)));
+  target->Set(String::NewSymbol("test9 alignof"), Number::New(__alignof__(test9)));
   target->Set(String::NewSymbol("test9 offsetof a"), Number::New(offsetof(test9, a)));
   target->Set(String::NewSymbol("test9 offsetof b"), Number::New(offsetof(test9, b)));
   target->Set(String::NewSymbol("test9 offsetof c"), Number::New(offsetof(test9, c)));
@@ -146,24 +155,29 @@ void Initialize(Handle<Object> target) {
   target->Set(String::NewSymbol("test9 offsetof e"), Number::New(offsetof(test9, e)));
 
   target->Set(String::NewSymbol("test10 sizeof"), Number::New(sizeof(test10)));
+  target->Set(String::NewSymbol("test10 alignof"), Number::New(__alignof__(test10)));
   target->Set(String::NewSymbol("test10 offsetof a"), Number::New(offsetof(test10, a)));
   target->Set(String::NewSymbol("test10 offsetof b"), Number::New(offsetof(test10, b)));
 
   target->Set(String::NewSymbol("test11 sizeof"), Number::New(sizeof(test11)));
+  target->Set(String::NewSymbol("test11 alignof"), Number::New(__alignof__(test11)));
   target->Set(String::NewSymbol("test11 offsetof a"), Number::New(offsetof(test11, a)));
   target->Set(String::NewSymbol("test11 offsetof b"), Number::New(offsetof(test11, b)));
   target->Set(String::NewSymbol("test11 offsetof c"), Number::New(offsetof(test11, c)));
   target->Set(String::NewSymbol("test11 offsetof d"), Number::New(offsetof(test11, d)));
 
   target->Set(String::NewSymbol("test12 sizeof"), Number::New(sizeof(test12)));
+  target->Set(String::NewSymbol("test12 alignof"), Number::New(__alignof__(test12)));
   target->Set(String::NewSymbol("test12 offsetof a"), Number::New(offsetof(test12, a)));
   target->Set(String::NewSymbol("test12 offsetof b"), Number::New(offsetof(test12, b)));
 
   target->Set(String::NewSymbol("test13 sizeof"), Number::New(sizeof(test13)));
+  target->Set(String::NewSymbol("test13 alignof"), Number::New(__alignof__(test13)));
   target->Set(String::NewSymbol("test13 offsetof a"), Number::New(offsetof(test13, a)));
   target->Set(String::NewSymbol("test13 offsetof b"), Number::New(offsetof(test13, b)));
 
   target->Set(String::NewSymbol("test14 sizeof"), Number::New(sizeof(test14)));
+  target->Set(String::NewSymbol("test14 alignof"), Number::New(__alignof__(test14)));
   target->Set(String::NewSymbol("test14 offsetof a"), Number::New(offsetof(test14, a)));
   target->Set(String::NewSymbol("test14 offsetof b"), Number::New(offsetof(test14, b)));
   target->Set(String::NewSymbol("test14 offsetof c"), Number::New(offsetof(test14, c)));
