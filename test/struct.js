@@ -209,6 +209,15 @@ describe('Struct', function () {
     })
     test(test13, 13)
 
+    var test14 = Struct({
+        'a': ref.types.char
+      , 'b': ref.types.char
+      , 'skip': ref.types.char
+      , 'c': ref.types.short
+      , 'd': ref.types.char
+    })
+    test(test14, 14)
+
   })
 
 })
