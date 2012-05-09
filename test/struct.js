@@ -223,6 +223,12 @@ describe('Struct', function () {
     })
     test(test14, 14)
 
+    var test15 = Struct({
+        'a': test1
+      , 'b': test2
+    })
+    test(test15, 15)
+
   })
 
 })
