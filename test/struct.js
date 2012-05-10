@@ -225,7 +225,7 @@ describe('Struct', function () {
 
     var test15 = Struct({
         'a': test1
-      , 'b': test2
+      , 'b': test1
     })
     test(test15, 15)
 
