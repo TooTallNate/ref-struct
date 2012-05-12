@@ -1,6 +1,6 @@
 ref-struct
 ==========
-### Create "struct" instances using Buffers
+### Create ABI-compliant "struct" instances on top of Buffers
 [![Build Status](https://secure.travis-ci.org/TooTallNate/ref-struct.png)](http://travis-ci.org/TooTallNate/ref-stuct)
 
 
