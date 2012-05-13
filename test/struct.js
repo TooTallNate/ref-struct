@@ -94,6 +94,22 @@ describe('Struct', function () {
     assert.equal(400, ps.childB.b)
   })
 
+  describe('string type identifiers', function () {
+
+    it('should work with string type identifiers', function () {
+      var S = Struct({
+          'int': 'int'
+        , 'long': 'long'
+        , 'string': 'string'
+      })
+
+      assert.strictEqual(ref.types.int, S.fields.int.type)
+      assert.strictEqual(ref.types.long, S.fields.long.type)
+      assert.strictEqual(ref.types.Utf8String, S.fields.string.type)
+    })
+
+  })
+
   describe('offsets and sizeofs', function () {
 
     function test (structType, testNumber) {
