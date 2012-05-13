@@ -110,6 +110,20 @@ describe('Struct', function () {
 
   })
 
+  describe('ref(), deref()', function () {
+
+    it('should work to ref() and then deref() 1 level deep', function () {
+      var S = Struct({ d: 'double' })
+      var s = new S({ d: Math.PI })
+      var sref = s.ref()
+      assert(Buffer.isBuffer(sref))
+      var _s = sref.deref()
+      assert(_s instanceof S)
+      assert.equal(Math.PI, _s.d)
+    })
+
+  })
+
   describe('offsets and sizeofs', function () {
 
     function test (structType, testNumber) {
