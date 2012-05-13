@@ -1,5 +1,5 @@
 { "name": "ref-struct"
-, "description": "\"struct\" type for Node.js"
+, "description": "Create ABI-compliant \"struct\" instances on top of Buffers"
 , "keywords": [ "struct", "ref" ]
 , "version": "0.0.1"
 , "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)"
