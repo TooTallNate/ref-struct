@@ -4,8 +4,8 @@ ref-struct
 [![Build Status](https://secure.travis-ci.org/TooTallNate/ref-struct.png)](http://travis-ci.org/TooTallNate/ref-stuct)
 
 
-This module offers a "struct" implementation on top of Node.js Buffers using the
-ref "type" interface.
+This module offers a "struct" implementation on top of Node.js Buffers
+using the ref "type" interface.
 
 Installation
 ------------
@@ -45,10 +45,17 @@ var timeval = StructType({
 
 // now we can create instances of it
 var tv = new timeval
+```
 
+#### With `node-ffi`
 
-// this gets very powerful when combined with `node-ffi` to invoke C functions
-gettimeofday(tv.ref(), null);
+This gets very powerful when combined with `node-ffi` to invoke C functions:
+
+``` js
+var ffi = require('node-ffi')
+
+var tv = new timeval
+gettimeofday(tv.ref(), null)
 ```
 
 
