@@ -58,6 +58,27 @@ var tv = new timeval
 gettimeofday(tv.ref(), null)
 ```
 
+#### Progressive API
+
+You can build up a Struct "type" incrementally (useful when interacting with a
+parser) using the `defineProperty()` function. But as soon as you _create_ an
+instance of the struct type, then no more properties may be added.
+
+``` js
+var ref = require('ref')
+var StructType = require('ref-struct')
+
+var MyStruct = Struct()
+MyStruct.defineProperty('width', ref.types.int)
+MyStruct.defineProperty('height', ref.types.int)
+
+var i = new MyStruct({ width: 5, height: 10 })
+
+MyStruct.defineProperty('weight', ref.types.int)
+// AssertionError: an instance of this Struct type has already been created, cannot add new "fields" anymore
+//      at Function.defineProperty (/Users/nrajlich/ref-struct/lib/struct.js:180:3)
+```
+
 
 License
 -------
