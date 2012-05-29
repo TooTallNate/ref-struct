@@ -52,7 +52,7 @@ var tv = new timeval
 This gets very powerful when combined with `node-ffi` to invoke C functions:
 
 ``` js
-var ffi = require('node-ffi')
+var ffi = require('ffi')
 
 var tv = new timeval
 gettimeofday(tv.ref(), null)
