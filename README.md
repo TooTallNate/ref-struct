@@ -62,7 +62,8 @@ gettimeofday(tv.ref(), null)
 
 You can build up a Struct "type" incrementally (useful when interacting with a
 parser) using the `defineProperty()` function. But as soon as you _create_ an
-instance of the struct type, then no more properties may be added.
+instance of the struct type, then the struct type is finalized, and no more
+properties may be added to it.
 
 ``` js
 var ref = require('ref')
