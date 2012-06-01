@@ -1,4 +1,11 @@
 
+0.0.3 / 2012-06-01
+==================
+
+ - set the "name" property of StructType instances
+ - add a `toString()` override
+ - fix a bug in the alignment calculation logic
+
 0.0.2 / 2012-05-16
 ==================
 
