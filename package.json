@@ -6,7 +6,7 @@
 , "repository": { "type": "git", "url": "git://github.com/TooTallNate/ref-struct.git" }
 , "main": "./lib/struct.js"
 , "scripts": {
-      "test": "cd test && node-gyp rebuild && mocha -gc --reporter spec *.js"
+      "test": "node-gyp rebuild --directory test && mocha -gc --reporter spec"
   }
 , "dependencies": {
       "debug": "*"
