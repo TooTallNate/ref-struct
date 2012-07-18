@@ -1,6 +1,6 @@
 ref-struct
 ==========
-### Create ABI-compliant "struct" instances on top of Buffers
+### Create ABI-compliant "[struct][]" instances on top of Buffers
 [![Build Status](https://secure.travis-ci.org/TooTallNate/ref-struct.png)](http://travis-ci.org/TooTallNate/ref-struct)
 
 
@@ -106,3 +106,5 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+[struct]: http://wikipedia.org/wiki/Struct_(C_programming_language)
