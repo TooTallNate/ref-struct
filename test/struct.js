@@ -24,6 +24,12 @@ describe('Struct', function () {
     })
   })
 
+  it('should throw when given a type with "size" == 0', function () {
+    assert.throws(function () {
+      Struct({ v: ref.types.void })
+    })
+  })
+
   it('should work in a simple case', function () {
     var SimpleStruct = Struct({
         'first': ref.types.byte
