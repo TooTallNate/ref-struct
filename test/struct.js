@@ -105,7 +105,7 @@ describe('Struct', function () {
 
       assert.strictEqual(ref.types.int, S.fields.int.type)
       assert.strictEqual(ref.types.long, S.fields.long.type)
-      assert.strictEqual(ref.types.Utf8String, S.fields.string.type)
+      assert.strictEqual(ref.types.CString, S.fields.string.type)
     })
 
   })
