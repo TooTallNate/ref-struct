@@ -108,6 +108,19 @@ describe('Struct', function () {
       assert.strictEqual(ref.types.CString, S.fields.string.type)
     })
 
+    it('should work as expected with "void *" as a type', function () {
+      var S = Struct({
+        'ptr1': 'void *',
+        'ptr2': 'void *'
+      })
+      var s = new S
+      var b = new Buffer(1)
+      s.ptr1 = ref.NULL
+      s.ptr2 = b
+      assert.equal(ref.NULL.address(), s.ptr1.address())
+      assert.equal(b.address(), s.ptr2.address())
+    })
+
   })
 
   describe('ref(), deref()', function () {
