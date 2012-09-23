@@ -1,6 +1,7 @@
 
 var assert = require('assert')
   , ref = require('ref')
+  , ArrayType = require('ref-array')
   , Struct = require('../')
   , bindings = require('./build/Release/struct_tests')
 
@@ -158,7 +159,6 @@ describe('Struct', function () {
             ': __alignof__(): expected ' + structType.alignment + ' to equal ' + expectedAlignment)
         })
         Object.keys(structType.fields).forEach(function (name) {
-          if (name.indexOf('skip') === 0) return
           it('should have a matching offsetof() for "' + name + '"', function () {
             var expectedOffset = bindings['test' + testNumber + ' offsetof ' + name]
             var offset = structType.fields[name].offset
@@ -258,15 +258,13 @@ describe('Struct', function () {
 
     var test13 = Struct({
         'a': ref.types.char
-      , 'b': ref.types.char
-      , 'skip': ref.types.char
+      , 'b': ArrayType('char', 2)
     })
     test(test13, 13)
 
     var test14 = Struct({
         'a': ref.types.char
-      , 'b': ref.types.char
-      , 'skip': ref.types.char
+      , 'b': ArrayType('char', 2)
       , 'c': ref.types.short
       , 'd': ref.types.char
     })
@@ -277,6 +275,13 @@ describe('Struct', function () {
       , 'b': test1
     })
     test(test15, 15)
+
+    var test16 = Struct({
+        'a': ArrayType('double', 10)
+      , 'b': ArrayType('char', 3)
+      , 'c': ArrayType('int', 6)
+    })
+    test(test16, 16)
 
   })
 
