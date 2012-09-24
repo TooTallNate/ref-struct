@@ -283,6 +283,16 @@ describe('Struct', function () {
     })
     test(test16, 16)
 
+    var test17 = Struct({
+        'a': ArrayType('char', 3)
+    })
+    test(test17, 17)
+
+    var test18 = Struct({
+        'a': ArrayType(test17, 100)
+    })
+    test(test18, 18)
+
   })
 
 })
