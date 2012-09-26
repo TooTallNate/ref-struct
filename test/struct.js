@@ -293,6 +293,31 @@ describe('Struct', function () {
     })
     test(test18, 18)
 
+    // this example from libdespotify
+    // see: https://github.com/TooTallNate/ref-struct/issues/1
+    var STRING_LENGTH = 256;
+    var test19 = Struct();
+    test19.defineProperty('has_meta_data', 'bool');
+    test19.defineProperty('playable', 'bool');
+    test19.defineProperty('geo_restricted', 'bool');
+    test19.defineProperty('track_id', ArrayType('uchar', 33));
+    test19.defineProperty('file_id', ArrayType('uchar', 41));
+    test19.defineProperty('file_bitrate', 'uint');
+    test19.defineProperty('album_id', ArrayType('uchar', 33));
+    test19.defineProperty('cover_id', ArrayType('uchar', 41));
+    test19.defineProperty('key','uchar *');
+    test19.defineProperty('allowed', 'char *');
+    test19.defineProperty('forbidden', 'char *');
+    test19.defineProperty('title', ArrayType('char', STRING_LENGTH));
+    test19.defineProperty('artist', 'void *');
+    test19.defineProperty('album', ArrayType('char', STRING_LENGTH));
+    test19.defineProperty('length', 'int');
+    test19.defineProperty('tracknumber', 'int');
+    test19.defineProperty('year', 'int');
+    test19.defineProperty('popularity', 'float');
+    test19.defineProperty('next', ref.refType(test19));
+    test(test19, 19);
+
   })
 
 })

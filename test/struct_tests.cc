@@ -117,6 +117,36 @@ typedef struct _test18 {
   test17 a[100];
 } test18;
 
+/* test19 example is from libdespotify
+ * See: https://github.com/TooTallNate/ref-struct/issues/1
+ */
+
+#define STRING_LENGTH 256
+typedef struct _test19 {
+  bool has_meta_data;
+  bool playable;
+  bool geo_restricted;
+  unsigned char track_id[33];
+  unsigned char file_id[41];
+  unsigned int file_bitrate;
+  unsigned char album_id[33];
+  unsigned char cover_id[41];
+  unsigned char *key;
+
+  char *allowed;
+  char *forbidden;
+
+  char title[STRING_LENGTH];
+  struct artist* artist;
+  char album[STRING_LENGTH];
+  int length;
+  int tracknumber;
+  int year;
+  float popularity;
+  struct _test19 *next; /* in case of multiple tracks
+                          in an album or playlist struct */
+} test19;
+
 void Initialize(Handle<Object> target) {
   HandleScope scope;
 
@@ -224,6 +254,28 @@ void Initialize(Handle<Object> target) {
   target->Set(String::NewSymbol("test18 sizeof"), Number::New(sizeof(test18)));
   target->Set(String::NewSymbol("test18 alignof"), Number::New(__alignof__(test18)));
   target->Set(String::NewSymbol("test18 offsetof a"), Number::New(offsetof(test18, a)));
+
+  target->Set(String::NewSymbol("test19 sizeof"), Number::New(sizeof(test19)));
+  target->Set(String::NewSymbol("test19 alignof"), Number::New(__alignof__(test19)));
+  target->Set(String::NewSymbol("test19 offsetof has_meta_data"), Number::New(offsetof(test19, has_meta_data)));
+  target->Set(String::NewSymbol("test19 offsetof playable"), Number::New(offsetof(test19, playable)));
+  target->Set(String::NewSymbol("test19 offsetof geo_restricted"), Number::New(offsetof(test19, geo_restricted)));
+  target->Set(String::NewSymbol("test19 offsetof track_id"), Number::New(offsetof(test19, track_id)));
+  target->Set(String::NewSymbol("test19 offsetof file_id"), Number::New(offsetof(test19, file_id)));
+  target->Set(String::NewSymbol("test19 offsetof file_bitrate"), Number::New(offsetof(test19, file_bitrate)));
+  target->Set(String::NewSymbol("test19 offsetof album_id"), Number::New(offsetof(test19, album_id)));
+  target->Set(String::NewSymbol("test19 offsetof cover_id"), Number::New(offsetof(test19, cover_id)));
+  target->Set(String::NewSymbol("test19 offsetof key"), Number::New(offsetof(test19, key)));
+  target->Set(String::NewSymbol("test19 offsetof allowed"), Number::New(offsetof(test19, allowed)));
+  target->Set(String::NewSymbol("test19 offsetof forbidden"), Number::New(offsetof(test19, forbidden)));
+  target->Set(String::NewSymbol("test19 offsetof title"), Number::New(offsetof(test19, title)));
+  target->Set(String::NewSymbol("test19 offsetof artist"), Number::New(offsetof(test19, artist)));
+  target->Set(String::NewSymbol("test19 offsetof album"), Number::New(offsetof(test19, album)));
+  target->Set(String::NewSymbol("test19 offsetof length"), Number::New(offsetof(test19, length)));
+  target->Set(String::NewSymbol("test19 offsetof tracknumber"), Number::New(offsetof(test19, tracknumber)));
+  target->Set(String::NewSymbol("test19 offsetof year"), Number::New(offsetof(test19, year)));
+  target->Set(String::NewSymbol("test19 offsetof popularity"), Number::New(offsetof(test19, popularity)));
+  target->Set(String::NewSymbol("test19 offsetof next"), Number::New(offsetof(test19, next)));
 
 }
 
