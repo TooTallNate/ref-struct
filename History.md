@@ -1,4 +1,20 @@
 
+0.0.4 / 2012-09-26
+==================
+
+ - struct: correct the field alignment logic (TJ Fontaine)
+ - test: add failing test from #1
+ - test: more stucts with arrays tests
+ - add support for "ref-array" types
+ - add `toObject()`, `toJSON()`, and `inspect()` functions to struct instances
+ - change `_pointer` to `buffer`
+ - don't allow types with size == 0 like 'void'
+ - test: add test case using "void *" as the type
+ - test: fix deprecation warning
+ - package: use the -C switch on node-gyp for the `npm test` command
+ - travis: test node v0.7 and node v0.8
+ - adjust the custom `toString()` output
+
 0.0.3 / 2012-06-01
 ==================
 
