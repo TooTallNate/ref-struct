@@ -1,4 +1,11 @@
 
+0.0.5 / 2013-01-24
+==================
+
+ - rename the backing buffer property to `ref.buffer`
+ - add .jshintrc file
+ - some minor optimizations
+
 0.0.4 / 2012-09-26
 ==================
 
