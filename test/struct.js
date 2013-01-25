@@ -27,7 +27,7 @@ describe('Struct', function () {
 
   it('should throw when given a type with "size" == 0', function () {
     assert.throws(function () {
-      Struct({ v: ref.types.void })
+      Struct({ v: 'void' })
     })
   })
 
@@ -54,7 +54,7 @@ describe('Struct', function () {
       , 'uint32Val': ref.types.uint32
       , 'floatVal': ref.types.float
       , 'doubleVal': ref.types.double
-      , 'pointer': ref.refType(ref.types.void)
+      , 'pointer': ref.refType('void')
     })
     var msTestPtr = new Buffer(1)
     var ms = new MegaStruct({
@@ -120,7 +120,7 @@ describe('Struct', function () {
         'ptr1': 'void *',
         'ptr2': 'void *'
       })
-      var s = new S
+      var s = new S()
       var b = new Buffer(1)
       s.ptr1 = ref.NULL
       s.ptr2 = b
@@ -162,8 +162,8 @@ describe('Struct', function () {
           it('should have a matching offsetof() for "' + name + '"', function () {
             var expectedOffset = bindings['test' + testNumber + ' offsetof ' + name]
             var offset = structType.fields[name].offset
-            assert.equal(expectedOffset, offset, 'test' + testNumber + ': offsetof('
-                + name + '): expected ' + offset + ' to equal ' + expectedOffset)
+            assert.equal(expectedOffset, offset, 'test' + testNumber +
+              ': offsetof(' + name + '): expected ' + offset + ' to equal ' + expectedOffset)
           })
         })
       })
