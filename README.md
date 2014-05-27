@@ -1,7 +1,7 @@
 ref-struct
 ==========
 ### Create ABI-compliant "[struct][]" instances on top of Buffers
-[![Build Status](https://secure.travis-ci.org/TooTallNate/ref-struct.png)](http://travis-ci.org/TooTallNate/ref-struct)
+[![Build Status](https://secure.travis-ci.svg/TooTallNate/ref-struct.png)](http://travis-ci.org/TooTallNate/ref-struct)
 
 
 This module offers a "struct" implementation on top of Node.js Buffers
