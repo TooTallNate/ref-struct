@@ -3,7 +3,7 @@ var assert = require('assert')
   , ref = require('ref')
   , ArrayType = require('ref-array')
   , Struct = require('../')
-  , bindings = require('./build/Release/struct_tests')
+  , bindings = require('bindings')({ module_root: __dirname, bindings: 'struct_tests' })
 
 describe('Struct', function () {
 
