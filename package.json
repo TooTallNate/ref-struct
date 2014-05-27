@@ -1,20 +1,33 @@
-{ "name": "ref-struct"
-, "description": "Create ABI-compliant \"struct\" instances on top of Buffers"
-, "keywords": [ "struct", "ref", "abi", "c", "c++", "ffi" ]
-, "version": "0.0.5"
-, "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)"
-, "repository": { "type": "git", "url": "git://github.com/TooTallNate/ref-struct.git" }
-, "main": "./lib/struct.js"
-, "scripts": {
-      "test": "node-gyp rebuild --directory test && mocha -gc --reporter spec"
+{
+  "name": "ref-struct",
+  "description": "Create ABI-compliant \"struct\" instances on top of Buffers",
+  "keywords": [
+    "struct",
+    "ref",
+    "abi",
+    "c",
+    "c++",
+    "ffi"
+  ],
+  "version": "0.0.5",
+  "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TooTallNate/ref-struct.git"
+  },
+  "main": "./lib/struct.js",
+  "scripts": {
+    "test": "node-gyp rebuild --directory test && mocha -gc --reporter spec"
+  },
+  "dependencies": {
+    "debug": "*",
+    "ref": "0"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "ref-array": "*"
+  },
+  "engines": {
+    "node": "*"
   }
-, "dependencies": {
-      "debug": "*"
-    , "ref": "0"
-  }
-, "devDependencies": {
-      "mocha": "*"
-    , "ref-array": "*"
-  }
-, "engines": { "node": "*" }
 }
