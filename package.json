@@ -20,12 +20,12 @@
     "test": "node-gyp rebuild --directory test && mocha -gc --reporter spec"
   },
   "dependencies": {
-    "debug": "*",
-    "ref": "0"
+    "debug": "~0.8.1",
+    "ref": "~0.2.0"
   },
   "devDependencies": {
     "nan": "~1.1.0",
     "mocha": "*",
-    "ref-array": "*"
+    "ref-array": "~0.0.3"
   }
 }
