@@ -26,8 +26,5 @@
   "devDependencies": {
     "mocha": "*",
     "ref-array": "*"
-  },
-  "engines": {
-    "node": "*"
   }
 }
