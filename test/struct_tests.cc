@@ -5,7 +5,6 @@
   #define __alignof__ __alignof
 #endif
 
-using namespace v8;
 using namespace node;
 
 namespace {
