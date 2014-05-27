@@ -24,6 +24,7 @@
     "ref": "0"
   },
   "devDependencies": {
+    "nan": "~1.1.0",
     "mocha": "*",
     "ref-array": "*"
   }
