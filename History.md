@@ -1,4 +1,23 @@
 
+0.0.6 / 2014-06-19
+==================
+
+  * package: update "ref" to v0.3.2
+  * package: update "debug" to v1.0.1
+  * test: remove v8 namespace import
+  * test: use "bindings" module to load the native tests
+  * README: add appveyor build badge
+  * History: match `git changelog` syntax
+  * package: loosely pin the deps
+  * test: nan-ify tests
+  * README: fix Travis badge
+  * README: use svg for Travis badge
+  * travis: test node v0.8, v0.10, and v0.11
+  * add appveyor.yml file for Windows testing
+  * package: remove "engines" field
+  * package: beautify
+  * add a couple comments
+
 0.0.5 / 2013-01-24
 ==================
 
