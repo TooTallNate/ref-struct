@@ -1,4 +1,11 @@
 
+0.0.7 / 2014-11-03
+==================
+
+ * gitignore: ignore single letter ?.js test files
+ * lib: only slice buffer in set() in the non-instance case
+ * package: allow any "debug" v2
+
 0.0.6 / 2014-06-19
 ==================
 
