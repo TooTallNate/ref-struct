@@ -130,6 +130,65 @@ describe('Struct', function () {
 
   })
 
+  describe('set()', function () {
+
+    it('should work to set() an Object', function () {
+      var Foo = Struct({
+        test1: ref.types.int,
+        test2: ref.types.int
+      });
+
+      var b = new Buffer(Foo.size * 2);
+
+      Foo.set(b, Foo.size * 0, {
+        test1: 7123,
+        test2: -555
+      });
+
+      var f = new Foo(b);
+      assert.equal(f.test1, 7123);
+      assert.equal(f.test2, -555);
+
+      Foo.set(b, Foo.size * 1, {
+        test1: 1234,
+        test2: -1234
+      });
+
+      f = new Foo(b.slice(Foo.size * 1));
+      assert.equal(f.test1, 1234);
+      assert.equal(f.test2, -1234);
+    });
+
+    it('should work to set() a Struct instance', function () {
+      // see: https://github.com/TooTallNate/ref-struct/issues/11
+      var Foo = Struct({
+        test1: ref.types.int,
+        test2: ref.types.int
+      });
+
+      var b = new Buffer(Foo.size * 2);
+
+      Foo.set(b, Foo.size * 0, new Foo({
+        test1: 7123,
+        test2: -555
+      }));
+
+      var f = new Foo(b);
+      assert.equal(f.test1, 7123);
+      assert.equal(f.test2, -555);
+
+      Foo.set(b, Foo.size * 1, new Foo({
+        test1: 1234,
+        test2: -1234
+      }));
+
+      f = new Foo(b.slice(Foo.size * 1));
+      assert.equal(f.test1, 1234);
+      assert.equal(f.test2, -1234);
+    });
+
+  });
+
   describe('ref(), deref()', function () {
 
     it('should work to ref() and then deref() 1 level deep', function () {
