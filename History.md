@@ -1,4 +1,9 @@
 
+1.0.0 / 2014-11-03
+==================
+
+ * bumping to v1.0.0 for better-defined semver semantics
+
 0.0.7 / 2014-11-03
 ==================
 
