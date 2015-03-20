@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "debug": "2",
-    "ref": "*"
+    "ref": "1"
   },
   "devDependencies": {
     "bindings": "~1.2.0",
