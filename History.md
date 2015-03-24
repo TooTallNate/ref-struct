@@ -1,4 +1,12 @@
 
+1.0.1 / 2015-03-24
+==================
+
+  * removed travis testing for node_js version "0.6" and added 0.12 and iojs
+  * added appveyor test versions as per node-ffi library for iojs & 0.12
+  * package: allow any "ref" v "1"
+  * npmignore: add `test` dir
+
 1.0.0 / 2014-11-03
 ==================
 
