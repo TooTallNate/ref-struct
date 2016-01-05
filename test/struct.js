@@ -379,4 +379,25 @@ describe('Struct', function () {
 
   })
 
+  describe('usePack()', function () {
+
+    it('can make no padding struct', function () {
+      var S = Struct({ a: 'int', p: ref.refType('void') }, true)
+      assert.equal(12, S.size);
+    })
+
+    it('should work to usePack(bool) and switch padding mode', function () {
+      var S = Struct({ a: 'int' , p: ref.refType('void') })
+      // now has padding between d and p
+      assert.equal(16, S.size)
+      // to no padding mode
+      S.usePack(true)
+      assert.equal(12, S.size)
+      // to padding mode
+      S.usePack(false)
+      assert.equal(16, S.size)
+    })
+
+  })
+
 })
