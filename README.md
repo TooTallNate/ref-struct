@@ -70,7 +70,7 @@ properties may be added to it.
 var ref = require('ref')
 var StructType = require('ref-struct')
 
-var MyStruct = Struct()
+var MyStruct = StructType()
 MyStruct.defineProperty('width', ref.types.int)
 MyStruct.defineProperty('height', ref.types.int)
 
