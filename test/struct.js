@@ -379,4 +379,18 @@ describe('Struct', function () {
 
   })
 
+  describe('packed struct', function () {
+
+    it('with-padding/no-padding struct', function () {
+      var np = Struct({ a: 'char', p: ref.refType('void') }, {packed: true})
+      assert.equal(bindings['test20 sizeof'], np.size)
+      assert.equal(bindings['test20 alignof'], np.alignment)
+
+      var wp = Struct({ a: 'char', p: ref.refType('void') })
+      assert.equal(bindings['test21 sizeof'], wp.size)
+      assert.equal(bindings['test21 alignof'], wp.alignment)
+    })
+
+  })
+
 })

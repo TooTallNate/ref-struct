@@ -145,6 +145,18 @@ typedef struct _test19 {
                           in an album or playlist struct */
 } test19;
 
+#pragma pack(1)
+typedef struct _test20 {
+  char a;
+  void *p;
+} test20;
+
+#pragma pack()
+typedef struct _test21 {
+  char a;
+  void *p;
+} test21;
+
 void Initialize(v8::Handle<v8::Object> target) {
   Nan::HandleScope scope;
 
@@ -275,6 +287,11 @@ void Initialize(v8::Handle<v8::Object> target) {
   target->Set(Nan::New<v8::String>("test19 offsetof popularity").ToLocalChecked(), Nan::New<v8::Number>(offsetof(test19, popularity)));
   target->Set(Nan::New<v8::String>("test19 offsetof next").ToLocalChecked(), Nan::New<v8::Number>(offsetof(test19, next)));
 
+  target->Set(Nan::New<v8::String>("test20 sizeof").ToLocalChecked(), Nan::New<v8::Number>(sizeof(test20)));
+  target->Set(Nan::New<v8::String>("test20 alignof").ToLocalChecked(), Nan::New<v8::Number>(__alignof__(test20)));
+
+  target->Set(Nan::New<v8::String>("test21 sizeof").ToLocalChecked(), Nan::New<v8::Number>(sizeof(test21)));
+  target->Set(Nan::New<v8::String>("test21 alignof").ToLocalChecked(), Nan::New<v8::Number>(__alignof__(test21)));
 }
 
 } // anonymous namespace
