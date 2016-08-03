@@ -1,5 +1,5 @@
 
-1.1.0 / 2015-08-27
+1.1.0 / 2016-08-02
 ==================
 
 * [[`eb4550fdaa`](https://github.com/TooTallNate/ref-struct/commit/eb4550fdaa)] - Implement `pack` option (Lee, SungUk)
