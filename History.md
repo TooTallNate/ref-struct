@@ -1,4 +1,11 @@
 
+1.1.0 / 2015-08-27
+==================
+
+* [[`eb4550fdaa`](https://github.com/TooTallNate/ref-struct/commit/eb4550fdaa)] - Implement `pack` option (Lee, SungUk)
+* [[`17c1c7a8ef`](https://github.com/TooTallNate/ref-struct/commit/17c1c7a8ef)] - fix StructType constructor name in README (typo) (David Corticchiato)
+* [[`54b72bde07`](https://github.com/TooTallNate/ref-struct/commit/54b72bde07)] - **appveyor**: fix node v0.8, test io.js v2.5 and v3 (Nathan Rajlich)
+
 1.0.2 / 2015-08-27
 ==================
 
