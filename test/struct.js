@@ -379,27 +379,16 @@ describe('Struct', function () {
 
   })
 
-  describe('usePack()', function () {
-    var size = {
-        unpack: { ia32: 8, x64: 16 },
-        pack: { ia32: 5, x64: 9}
-    }
+  describe('packed struct', function () {
 
-    it('can make no padding struct', function () {
-      var S = Struct({ a: 'char', p: ref.refType('void') }, true)
-      assert.equal(size.pack[process.arch], S.size)
-    })
+    it('with-padding/no-padding struct', function () {
+      var np = Struct({ a: 'char', p: ref.refType('void') }, {packed: true})
+      assert.equal(bindings['test20 sizeof'], np.size)
+      assert.equal(bindings['test20 alignof'], np.alignment)
 
-    it('should work to usePack(bool) and switch padding mode', function () {
-      var S = Struct({ a: 'char' , p: ref.refType('void') })
-      // now has padding between d and p
-      assert.equal(size.unpack[process.arch], S.size)
-      // to no padding mode
-      S.usePack(true)
-      assert.equal(size.pack[process.arch], S.size)
-      // to padding mode
-      S.usePack(false)
-      assert.equal(size.unpack[process.arch], S.size)
+      var wp = Struct({ a: 'char', p: ref.refType('void') })
+      assert.equal(bindings['test21 sizeof'], wp.size)
+      assert.equal(bindings['test21 alignof'], wp.alignment)
     })
 
   })
