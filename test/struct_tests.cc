@@ -157,6 +157,12 @@ typedef struct _test21 {
   void *p;
 } test21;
 
+#pragma pack(2)
+typedef struct _test22 {
+  char a;
+  void *p;
+} test22;
+
 void Initialize(v8::Handle<v8::Object> target) {
   Nan::HandleScope scope;
 
@@ -289,9 +295,18 @@ void Initialize(v8::Handle<v8::Object> target) {
 
   target->Set(Nan::New<v8::String>("test20 sizeof").ToLocalChecked(), Nan::New<v8::Number>(sizeof(test20)));
   target->Set(Nan::New<v8::String>("test20 alignof").ToLocalChecked(), Nan::New<v8::Number>(__alignof__(test20)));
+  target->Set(Nan::New<v8::String>("test20 offsetof a").ToLocalChecked(), Nan::New<v8::Number>(offsetof(test20, a)));
+  target->Set(Nan::New<v8::String>("test20 offsetof p").ToLocalChecked(), Nan::New<v8::Number>(offsetof(test20, p)));
 
   target->Set(Nan::New<v8::String>("test21 sizeof").ToLocalChecked(), Nan::New<v8::Number>(sizeof(test21)));
   target->Set(Nan::New<v8::String>("test21 alignof").ToLocalChecked(), Nan::New<v8::Number>(__alignof__(test21)));
+  target->Set(Nan::New<v8::String>("test21 offsetof a").ToLocalChecked(), Nan::New<v8::Number>(offsetof(test21, a)));
+  target->Set(Nan::New<v8::String>("test21 offsetof p").ToLocalChecked(), Nan::New<v8::Number>(offsetof(test21, p)));
+
+  target->Set(Nan::New<v8::String>("test22 sizeof").ToLocalChecked(), Nan::New<v8::Number>(sizeof(test22)));
+  target->Set(Nan::New<v8::String>("test22 alignof").ToLocalChecked(), Nan::New<v8::Number>(__alignof__(test22)));
+  target->Set(Nan::New<v8::String>("test22 offsetof a").ToLocalChecked(), Nan::New<v8::Number>(offsetof(test22, a)));
+  target->Set(Nan::New<v8::String>("test22 offsetof p").ToLocalChecked(), Nan::New<v8::Number>(offsetof(test22, p)));
 }
 
 } // anonymous namespace

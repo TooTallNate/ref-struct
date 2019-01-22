@@ -377,6 +377,23 @@ describe('Struct', function () {
     test19.defineProperty('next', ref.refType(test19));
     test(test19, 19);
 
+    var test20 = Struct({ 
+      a: 'char', 
+      p: ref.refType('void')
+    }, {packed: true})
+    test(test20, 20)
+
+    var test21 = Struct({ 
+      a: 'char', 
+      p: ref.refType('void')
+    })
+    test(test21, 21)
+
+    var test22 = Struct({ 
+      a: 'char', 
+      p: ref.refType('void')
+    },{pack: 2})
+    test(test22, 22)
   })
 
   describe('packed struct', function () {
